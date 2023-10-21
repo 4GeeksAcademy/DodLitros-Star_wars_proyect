@@ -12,7 +12,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			getcharacters: async () => {
 				let store = getStore();
 				try {
-				  let response = await fetch(`${store.urlBase}/characters`);
+				  let response = await fetch(`${store.urlBase}/people`);
 				  let data = await response.json();
 				  
 				  for (let item of data.results) {
@@ -54,7 +54,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const store = getStore()
 				const actions = getActions() 
 				if (!store.favorites.includes(favorito)) {
-					setStore({ favorites: [favorito, ...store.favorites] })
+					setStore({ 
+						favorites: [favorito, ...getStore().favorites] 
+					})
 				}else{
 					actions.deleteFavorites(favorito)
 				}		

@@ -18,7 +18,7 @@ export const Navbar = () => {
 					{store.favorites && store.favorites.length > 0 ? store.favorites.map((item) => {
 						return(
 							<li key={item.id} className="dropdown-item">
-								{item.priperties.item} 
+								{item} 
 								
 							</li>
 						)

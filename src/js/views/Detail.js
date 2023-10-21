@@ -12,17 +12,17 @@ export const Detail = () => {
     const details = () => {
         if (params.nature == "planets") {
             const searchFind = store.planets.find((item) => item.uid == params.id)
-            console.log(searchFind)
+            
             setSearch(searchFind)
         } else {
             const searchFind = store.characters.find((item) => item.uid == params.id)
-            console.log(searchFind)
+            
             setSearch(searchFind)
         }
     }
     useEffect(() => {
         details()
-    }, [store.characters])
+    },[])
 
     return (
         <>

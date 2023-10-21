@@ -28,7 +28,8 @@ export const Home = () => {
 								<div className="button-footer">
 								<Link to={`/characters/${item.uid}`} className="btn btn-outline-primary">Learn more</Link>
 									<button className="btn btn-outline-warning"
-										onClick={() => actions.addFavorites(item.properties.name)}
+										onClick={() => actions.addFavorites(item.properties.name)
+										}
 										>♡
 									</button>
 								</div>
